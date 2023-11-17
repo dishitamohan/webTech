@@ -25,7 +25,7 @@ function submitForm() {
     // You can perform further validation here if needed
 
     // Sending data to PHP for storage
-    fetch("http://localhost/sagnik/store.php", {
+    fetch("http://localhost/test2/store.php", {
         method: "POST",
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
@@ -35,9 +35,10 @@ function submitForm() {
     })
     .then(response => {
         console.log("Data stored successfully!");
-
+        window.location.href = "http://localhost/test2/display.php";
+        
         // Fetch and display the data from data.txt
-        return fetch("http://localhost/sagnik/display.php");
+        return fetch("http://localhost/test2/display.php");
     })
     .then(response => response.text())
     .then(data => console.log(data))
